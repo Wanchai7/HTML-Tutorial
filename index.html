@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Tutorial - Modern Style</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+
     <style>
         /* ตั้งค่าพื้นฐาน */
         html {
@@ -11,11 +16,11 @@
         }
 
         body {
-            font-family: 'Segoe UI', 'Roboto', Helvetica, Arial, sans-serif;
+            font-family: 'Kanit', sans-serif; /* เปลี่ยนฟอนต์ให้เหมือน Workshop Heading */
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9; /* สีพื้นหลังรวมดูสบายตา */
+            background-color: #f0f2f5; /* สีพื้นหลังเทาอ่อน */
             color: #333;
         }
 
@@ -25,37 +30,37 @@
             margin: 40px auto;
             background-color: #ffffff;
             padding: 50px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* เงาบางๆ ให้ดูลอยขึ้น */
+            border-radius: 16px; /* มุมมนเหมือน Card */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* เงาฟุ้งๆ */
         }
 
         /* หัวข้อ */
         h1, h2 {
-            color: #4a148c; /* เปลี่ยนจากชมพูแสบตา เป็นม่วงเข้มดูแพง */
+            color: #2c3e50; /* เปลี่ยนจากม่วง เป็นสีเทาเข้ม/น้ำเงิน (Dark Blue) */
             font-weight: 600;
         }
 
         h1 {
-            border-bottom: 3px solid #7c43bd;
+            border-bottom: 3px solid #3498db; /* เส้นขีดสีฟ้า */
             padding-bottom: 10px;
             margin-top: 40px;
         }
 
         h2 {
             margin-top: 30px;
-            color: #6a1b9a;
+            color: #2c3e50;
         }
 
         /* ลิงก์ทั่วไป */
         a {
             text-decoration: none;
-            color: #1565c0;
+            color: #3498db; /* ลิงก์สีฟ้า */
             font-weight: 500;
             transition: all 0.2s ease;
         }
 
         a:hover {
-            color: #d50000;
+            color: #1d6fa5; /* เข้มขึ้นเมื่อ Hover */
             text-decoration: underline;
         }
 
@@ -71,27 +76,30 @@
 
         ul li a {
             display: block;
-            padding: 10px 15px;
-            background-color: #f3e5f5; /* ม่วงอ่อนๆ */
-            border-radius: 6px;
-            color: #4a148c;
-            border-left: 4px solid #7c43bd;
+            padding: 12px 15px;
+            background-color: #f8f9fa; /* พื้นหลังสีขาวเทา */
+            border-radius: 8px;
+            color: #333;
+            border-left: 4px solid #ddd; /* เส้นข้างสีเทา */
+            transition: 0.2s;
         }
 
         ul li a:hover {
-            background-color: #e1bee7;
-            padding-left: 20px; /* ขยับขวาเล็กน้อยเมื่อเอาเมาส์ชี้ */
+            background-color: #eaf2f8; /* พื้นหลังฟ้าอ่อนเมื่อ Hover */
+            border-left: 4px solid #3498db; /* เส้นข้างเปลี่ยนเป็นสีฟ้า */
+            padding-left: 20px;
             text-decoration: none;
+            color: #3498db;
         }
 
-        /* ส่วนแสดงโค้ด (<pre>) ปรับให้เป็น Dark Mode */
+        /* ส่วนแสดงโค้ด (<pre>) */
         pre {
-            background-color: #282c34; /* สีพื้นหลังแบบ Text Editor */
-            color: #abb2bf; /* สีตัวหนังสือ */
+            background-color: #282c34; /* พื้นหลังสีเข้ม (Dark Mode) */
+            color: #abb2bf;
             padding: 20px;
             border-radius: 8px;
-            overflow-x: auto; /* เลื่อนแนวนอนได้ถ้าโค้ดยาว */
-            border-left: 5px solid #ff79c6; /* เส้นขอบสีชมพูสดใส ตัดกับพื้นดำ */
+            overflow-x: auto;
+            border-left: 5px solid #3498db; /* เปลี่ยนเส้นขอบเป็นสีฟ้า */
             font-family: 'Consolas', 'Monaco', monospace;
             font-size: 0.95em;
             line-height: 1.5;
@@ -109,16 +117,17 @@
         /* ปุ่ม Workshop และ Top */
         .btn-link {
             display: inline-block;
-            background-color: #4a148c;
+            background-color: #3498db; /* ปุ่มสีฟ้า */
             color: white !important;
-            padding: 5px 12px;
-            font-size: 0.8em;
+            padding: 5px 15px;
+            font-size: 0.85em;
             border-radius: 20px;
             text-decoration: none !important;
+            box-shadow: 0 2px 5px rgba(52, 152, 219, 0.3);
         }
         
         .btn-link:hover {
-            background-color: #7c43bd;
+            background-color: #2980b9;
             transform: translateY(-2px);
         }
 
@@ -130,17 +139,19 @@
         }
         
         .back-to-top:hover {
-            color: #4a148c;
+            color: #3498db;
         }
 
-        /* แก้ไข p เล็กน้อย */
+        /* Text Styles */
         p {
             color: #555;
             font-size: 1.05em;
         }
     </style>
 </head>
-<body id="top"> <h1>HTML Tutorial</h1>
+<body id="top">
+    <div class="container">
+        <h1>HTML Tutorial</h1>
         <p>Welcome to the HTML tutorial. Click on the topics below to start learning:</p>
         
         <h2>Topics</h2>
@@ -161,6 +172,7 @@
         </ul>
         <hr>
 
+        <!-- section 1 -->
         <h2 id="section1">Introduction to HTML</h2>
         <pre>
 - HTML stands for Hyper Text Markup Language
@@ -170,11 +182,13 @@
 - HTML elements tell the browser how to display the content
 - HTML elements are represented by tags
         </pre>
-        <a href="#top" >↑ Top</a>
+        <a href="#top" class="back-to-top">☝️กลับสู่ด้านบน</a>
         <hr>
 
+        <!-- section 2 -->
         <h2 id="section2">HTML Document Structure</h2>
-        <p>An HTML document has the following basic structure...</p> <pre>
+        <p>An HTML document has the following basic structure...</p> 
+<pre>
 คำอธิบาย:
 &lt;!DOCTYPE html&gt;: ระบุว่าเป็นเอกสาร HTML5
 &lt;html&gt;: เป็นรากของเอกสาร HTML ทั้งหมด
@@ -187,11 +201,12 @@
 
 ตัวอย่าง: &lt;h1&gt;Hello, World!&lt;/h1&gt;
 </pre>
-        <a href="#top" >↑ Top</a>
+        <a href="#top" class="back-to-top">☝️กลับสู่ด้านบน</a>
         <hr>
 
+        <!-- section 3 -->
         <h1 id="section3">Heading</h1>
-        <p><a href="#">Workshop</a></p>
+        <p><a href="01_heading.html" class="btn-link">Workshop</a></p>
         <p>HTML paragraphs are defined with the &lt;h1&gt; to &lt;h6&gt; tags...</p>
 <pre>
 - &lt;h1&gt;: Heading 1 (ใหญ่สุด)
@@ -201,18 +216,20 @@
 - &lt;h5&gt;: Heading 5
 - &lt;h6&gt;: Heading 6 (เล็กสุด)
 </pre>
-        <a href="#top">↑ Top</a>
+        <a href="#top" class="back-to-top">☝️กลับสู่ด้านบน</a>
         <hr>
 
+        <!-- section 4 -->
         <h1 id="section4">Paragraph</h1>
         <p><a href="#" class="btn-link">Workshop</a></p>
         <p>HTML paragraphs are defined with the &lt;p&gt; tag...</p>
 <pre>
     - &lt;p&gt;: Paragraph (ย่อหน้า)
 </pre>
-        <a href="#top">↑ Top</a>
+        <a href="#top" class="back-to-top">☝️กลับสู่ด้านบน</a>
         <hr>
 
+        <!-- section 5 -->
         <h1 id="section5">Text Formatting</h1>
         <p><a href="#" class="btn-link">Workshop</a></p>
         <p>HTML provides various elements to format text...</p>
@@ -225,9 +242,10 @@
 - &lt;mark&gt;: Highlighted text
 - &lt;code&gt;: Code snippet
 </pre>
-        <a href="#top">↑ Top</a>
+        <a href="#top" class="back-to-top">☝️กลับสู่ด้านบน</a>
         <hr>
 
+        <!-- section 6 -->
         <h1 id="section6">Creating Links</h1>
         <p><a href="#" class="btn-link">Workshop</a></p>
         <p>HTML links are defined with the &lt;a&gt; tag...</p>
@@ -239,9 +257,10 @@ Attributes:
 - target="_blank": เปิดหน้าต่างใหม่
 - mailto: สำหรับส่งอีเมล
 </pre>
-        <a href="#top">↑ Top</a>
+        <a href="#top" class="back-to-top">☝️กลับสู่ด้านบน</a>
         <hr>
 
+        <!-- section 7 -->
         <h1 id="section7">Lists (Ordered and Unordered)</h1>
         <p><a href="#" class="btn-link">Workshop</a></p>
         <p>HTML lists are defined with the &lt;ul&gt;, &lt;ol&gt;, and &lt;li&gt; tags.</p>
@@ -258,9 +277,10 @@ Ordered List (มีตัวเลข):
   &lt;li&gt;Step 2&lt;/li&gt;
 &lt;/ol&gt;
 </pre>
-        <a href="#top" >↑ Top</a>
+        <a href="#top" class="back-to-top">☝️กลับสู่ด้านบน</a>
         <hr>
 
+        <!-- section 8 -->
         <h1 id="section8">Adding Images</h1>
         <p><a href="#" class="btn-link">Workshop</a></p>
 <pre>
@@ -270,9 +290,10 @@ Ordered List (มีตัวเลข):
 - alt: คำอธิบายรูป (สำคัญสำหรับ SEO)
 - width/height: ขนาดรูป
 </pre>
-        <a href="#top">↑ Top</a>
+        <a href="#top" class="back-to-top">☝️กลับสู่ด้านบน</a>
         <hr>
 
+        <!-- section 9 -->
         <h1 id="section9">Creating Tables</h1>
         <p><a href="#" class="btn-link">Workshop 1</a> <a href="#" class="btn-link">Workshop 2</a></p>
 <pre>
@@ -287,9 +308,10 @@ Ordered List (มีตัวเลข):
   &lt;/tr&gt;
 &lt;/table&gt;
 </pre>
-        <a href="#top" >↑ Top</a>
+        <a href="#top" class="back-to-top">☝️กลับสู่ด้านบน</a>
         <hr>
 
+        <!-- section 10 -->
         <h1 id="section10">HTML Forms</h1>
         <p><a href="#" class="btn-link">Workshop 1</a> <a href="#" class="btn-link">Workshop 2</a></p>
 <pre>
@@ -301,12 +323,13 @@ Ordered List (มีตัวเลข):
 4. &lt;select&gt; & &lt;option&gt;: Dropdown menu
 5. &lt;button&gt;: ปุ่มกด
 </pre>
-        <a href="#top" >↑ Top</a>
+        <a href="#top" class="back-to-top">☝️กลับสู่ด้านบน</a>
         <hr>
 
         <h1>My Workshop</h1>
-        <ul style="list-style-type: square; margin-left: 20px;"> <li><a href="#" style="background:none; border:none; padding:0; color:#4a148c; display:inline;">Workshop 01 : Rabbit</a></li>
-            <li><a href="#" style="background:none; border:none; padding:0; color:#4a148c; display:inline;">Workshop 02 : Login</a></li>
+        <ul style="list-style-type: square; margin-left: 20px;"> 
+            <li><a href="#" style="background:none; border:none; padding:0; color:#3498db; display:inline;">Workshop 01 : Rabbit</a></li>
+            <li><a href="#" style="background:none; border:none; padding:0; color:#3498db; display:inline;">Workshop 02 : Login</a></li>
         </ul>
         <a href="#top" class="back-to-top">↑ Back to Top</a>
         <hr>
@@ -314,6 +337,6 @@ Ordered List (มีตัวเลข):
         <p style="text-align: center; color: #999; font-size: 0.9em;">
             Learn more about HTML &copy; 2024
         </p>
-
-    </> </body>
+    </div>
+</body>
 </html>
