@@ -69,7 +69,6 @@
             padding-bottom: 10px;
             margin-top: 0;
         }
-        
 
         ul {
             padding-left: 20px;
@@ -95,25 +94,6 @@
             border-radius: 4px;
             color: #c7254e;
             font-family: monospace;
-        }
-
-        /* ตารางใน Card 3 */
-        .tag-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
-        .tag-table th, .tag-table td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
-        .tag-table th {
-            background-color: var(--primary-color);
-            color: white;
-        }
-        .tag-table tr:nth-child(even) {
-            background-color: #f9f9f9;
         }
 
         /* Footer Link */
@@ -150,8 +130,6 @@
         </header>
         
         <main>
-
-            <!-- card 1 -->
             <div class="card">
                 <h1>1. สิ่งที่ต้องรู้ก่อนเริ่มทำ Workshop</h1>
                 <p>HTML มีแท็กสำหรับจัดรูปแบบข้อความ ทำให้เนื้อหาดูเด่น อ่านง่าย และสื่อความหมายได้ดีขึ้น</p>
@@ -159,7 +137,6 @@
                     <li>&lt;b&gt; : <b>ตัวหนา (เน้นแบบทั่วไป)</b></li>
                     <li>&lt;strong&gt; : <strong>ตัวหนาแบบ "สำคัญ" เชิงความหมาย (Semantic Importance)</strong></li>
                     <li>&lt;i&gt; : <i>ตัวเอียง (ใช้กับศัพท์เฉพาะหรือชื่อเรื่อง)</i></li>
-                    
                     <li>&lt;u&gt; :<u> ขีดเส้นใต้ (Underline)</u></li>
                     <li>&lt;mark&gt; : <mark>ไฮไลต์ข้อความ</mark></li>
                     <li>&lt;code&gt; :<code> แสดงข้อความเป็นรูปแบบโค้ด</code></li>
@@ -170,7 +147,6 @@
                 </ul>
             </div>
 
-            <!-- card 2 -->
             <div class="card">
                 <h1>2. ภารกิจสำหรับนักศึกษาต้องทำ</h1>
                 <p>ให้ค้นหาเนื้อหาเกี่ยวกับ <strong>“เทคโนโลยีคอมพิวเตอร์สมัยใหม่”</strong> โดยต้องมีองค์ประกอบดังนี้:</p>
@@ -181,52 +157,27 @@
 4. ข้อความไหนมีการจัด Formatting ให้ใส่สีข้อความ <span style="color:hotpink">เป็นสีชมพู</span> (Inline Style)</pre>
             </div>
 
-            <!-- card 3 -->
             <div class="card">
-                <h1>3. ตัวอย่างการใช้งาน (Cheat Sheet)</h1>
-                <p>ตารางเปรียบเทียบโค้ดและการแสดงผลจริง เพื่อนำไปประยุกต์ใช้ในภารกิจ</p>
+                <h1>3. เทคโนโลยีคอมพิวเตอร์สมัยใหม่ (Quantum Computing)</h1>
                 
-                <table class="tag-table">
-                    <thead>
-                        <tr>
-                            <th>แท็ก (Tag)</th>
-                            <th>คำอธิบาย</th>
-                            <th>ผลลัพธ์ (Result)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><code>&lt;b&gt;...&lt;/b&gt;</code></td>
-                            <td>ตัวหนา</td>
-                            <td><b>ตัวหนา</b></td>
-                        </tr>
-                        <tr>
-                            <td><code>&lt;strong&gt;...&lt;/strong&gt;</code></td>
-                            <td>ตัวหนา (สำคัญ)</td>
-                            <td><strong>สำคัญมาก!</strong></td>
-                        </tr>
-                        <tr>
-                            <td><code>&lt;i&gt;...&lt;/i&gt;</code></td>
-                            <td>ตัวเอียง</td>
-                            <td><i>Technical Term</i></td>
-                        </tr>
-                        <tr>
-                            <td><code>&lt;mark&gt;...&lt;/mark&gt;</code></td>
-                            <td>ไฮไลต์</td>
-                            <td><mark>ข้อความสำคัญ</mark></td>
-                        </tr>
-                        <tr>
-                            <td><code>&lt;del&gt;...&lt;/del&gt;</code></td>
-                            <td>ขีดฆ่า</td>
-                            <td><del>ราคา 100 บาท</del></td>
-                        </tr>
-                        <tr>
-                            <td><code>X&lt;sup&gt;2&lt;/sup&gt;</code></td>
-                            <td>ตัวยก</td>
-                            <td>X<sup>2</sup></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <p>
+                    ในยุคปัจจุบัน เทคโนโลยีคอมพิวเตอร์กำลังก้าวเข้าสู่ยุคใหม่ด้วย 
+                    <b style="color: #007bff;">Quantum Computing</b> (คอมพิวเตอร์ควอนตัม) 
+                    ซึ่งมีพลังการประมวลผลที่ <i style="color: #dc3545;">รวดเร็วกว่าซูเปอร์คอมพิวเตอร์ในปัจจุบันมหาศาล</i> 
+                    โดยทำงานบนพื้นฐานของ <u style="color: #28a745;">Qubits</u> (Quantum Bits) แทนที่จะเป็น Bits ธรรมดา 
+                    เทคโนโลยีนี้จะเข้ามาเปลี่ยนโลกในหลายด้าน แต่ก็อาจทำให้ระบบความปลอดภัยเดิม 
+                    <del style="color: #6c757d;">กลายเป็นสิ่งที่ล้าสมัย</del> ไปในทันที จึงถือเป็น 
+                    <strong style="color: #fd7e14;">นวัตกรรมที่สำคัญที่สุด</strong> แห่งศตวรรษนี้
+                </p>
+                
+                <p>
+                    นอกจากนี้ การมาถึงของ AI ยังช่วยเสริมศักยภาพให้การคำนวณซับซ้อนขึ้นไปอีกขั้น
+                    ทำให้มนุษย์สามารถแก้ปัญหาที่ไม่เคยแก้ได้มาก่อน
+                </p>
+
+                <p>
+                    เตรียมพร้อมรับมือกับการเปลี่ยนแปลงครั้งใหญ่นี้ได้เลย!
+                </p>
             </div>
 
         </main>
