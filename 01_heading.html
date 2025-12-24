@@ -1,3 +1,4 @@
+<!-- white-space: pre-wrap; ปรับให้ขนาดหน้าจอย่อตาม -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +6,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workshop: HTML Heading</title>
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
@@ -23,6 +23,7 @@
             background-color: #f0f2f5; /* สีพื้นหลังโทนเทาอ่อนสบายตา */
             color: #333;
             line-height: 1.6;
+            
         }
 
         /* จัดกึ่งกลางหน้าและกำหนดความกว้างสูงสุด */
@@ -60,7 +61,7 @@
         }
 
         .card:hover {
-            transform: translateY(-3px); /* ขยับขึ้นเล็กน้อยเมื่อเอาเมาส์ชี้ */
+            transform: translateY(-7px); /* ขยับขึ้นเล็กน้อยเมื่อเอาเมาส์ชี้ */
         }
 
         /* หัวข้อภายในการ์ด */
@@ -117,13 +118,14 @@
         }
 
         /* เน้นข้อความ */
-        .highlight-box {
+        .note {
             background-color: #fff3cd;
             border-left: 5px solid #ffc107;
             padding: 15px;
             margin-top: 15px;
             border-radius: 4px;
         }
+
     </style>
 </head>
 
@@ -146,7 +148,7 @@
                     <li><strong>H5</strong> – ใช้น้อย แต่เน้นลำดับข้อมูล</li>
                     <li><strong>H6</strong> – เล็กสุด ใช้กับหัวข้อระดับลึก</li>
                 </ul>
-                <div class="highlight-box">
+                <div class="note">
                     💡 <strong>Tip:</strong> H1 ควรมีเพียง 1 อันในแต่ละหน้า เพื่อช่วยเรื่อง SEO และโครงสร้างของเอกสาร
                 </div>
             </div>
