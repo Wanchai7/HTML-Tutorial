@@ -1,0 +1,75 @@
+/* Global Styles */
+* {
+  /* กำหนด ไม่เอาค่า Box มาคิดเช่นเรากำหนด with = 100 ก็จะไม่เอามาคิด */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  /* กำหนดระยะห่าง ไม่ให้ติดกันเกิรไป */
+  line-height: 1.6;
+  background-color: rgb(131, 166, 255);
+}
+
+/* Componant Styles */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  background-color: aqua;
+}
+
+.basge {
+}
+
+pre {
+}
+
+code {
+}
+
+.card {
+}
+
+.card.mudule-1 {
+}
+.card.mudule-2 {
+}
+.card.mudule-3 {
+}
+.card.mudule-4 {
+}
+
+.note {
+}
+
+.note::before {
+}
+
+/* Group 1 Style */
+.header {
+  background-color: #ff00fb;
+  box-shadow: 5px 5px 15px rgba(red, green, blue, alpha);
+  padding: 20px;
+
+  /* การจัดตำแหน่ง */
+  display: flex;
+  flex-direction: column;
+  /* จัดวางไว้ตรงกลาง */
+  align-items: center;
+  justify-content: center;
+}
+/* Group 2 Style */
+/* Group 3 Style */
+/* Group 4 Style */
+/* Group 5 Style */
+/* Group 6 Style */
+/* Group 7 Style */
+/* Group 8 Style */
+/* Group 9 Style */
+/* Group 10 Style */

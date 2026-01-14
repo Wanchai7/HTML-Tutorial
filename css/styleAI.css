@@ -1,0 +1,364 @@
+/* =========================================
+   1. ส่วนการนำเข้าฟอนต์และตั้งค่าตัวแปร (Global Setup)
+   ========================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap");
+
+:root {
+  --primary-color: #4a90e2; /* สีฟ้าหลัก */
+  --secondary-color: #f39c12; /* สีส้มสำหรับจุดเน้น */
+  --bg-color: #f4f6f8; /* สีพื้นหลังหน้าเว็บ */
+  --card-bg: #ffffff; /* สีพื้นหลังการ์ด */
+  --text-color: #333; /* สีข้อความ */
+  --code-bg: #2d2d2d; /* สีพื้นหลังโค้ด */
+  --code-text: #f8f8f2; /* สีข้อความโค้ด */
+}
+
+/* =========================================
+   2. Reset & Base Styles
+   ========================================= */
+
+* {
+  box-sizing: border-box; /* คิด padding รวมใน width */
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth; /* เลื่อนหน้าจอแบบนุ่มนวล */
+}
+
+body {
+  font-family: "Prompt", Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding-bottom: 50px;
+}
+
+/* =========================================
+   3. Layout & Components
+   ========================================= */
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.badge {
+  background-color: #e2e8f0;
+  color: #475569;
+  font-size: 0.7em;
+  padding: 3px 8px;
+  border-radius: 10px;
+  vertical-align: middle;
+  margin-left: 8px;
+  font-weight: 600;
+}
+
+pre {
+  background-color: var(--code-bg);
+  color: var(--code-text);
+  padding: 15px;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 15px 0;
+  border-left: 4px solid var(--secondary-color);
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* รองรับ typo <per> ใน HTML */
+per {
+  display: block;
+  background-color: var(--code-bg);
+  color: var(--code-text);
+  padding: 15px;
+  border-radius: 6px;
+  margin: 15px 0;
+  font-family: monospace;
+}
+
+code {
+  background-color: #eee;
+  padding: 2px 5px;
+  border-radius: 4px;
+  color: #c7254e;
+  font-family: monospace;
+}
+
+/* Style ของการ์ดทุกใบ */
+.card,
+.card1 {
+  background-color: var(--card-bg);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+  border: 1px solid #eee;
+
+  /* เว้นระยะขอบบนเวลา Scroll มาหา ID นี้ ให้พ้นความสูงของ Header */
+  scroll-margin-top: 250px;
+}
+
+.card h2,
+.card1 h2 {
+  color: var(--primary-color);
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.note {
+  background-color: #fff9c4;
+  padding: 15px;
+  border-radius: 6px;
+  border-left: 5px solid #fbc02d;
+  font-size: 0.9rem;
+  margin-top: 15px;
+  color: #555;
+}
+
+.note::before {
+  content: "💡 Note: ";
+  font-weight: bold;
+}
+
+/* =========================================
+   4. Header & Navigation
+   ========================================= */
+
+.header {
+  position: sticky; /* สั่งให้เกาะติด */
+  top: 0; /* ติดที่ขอบบนสุด 0px */
+  z-index: 1000; /* ลอยอยู่เหนือเลเยอร์อื่นๆ */
+  background-color: #f4f6f8; /* สีพื้นหลังทึบกันตัวหนังสือซ้อน */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* เงา */
+
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.header ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-text-link a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--primary-color);
+  color: white !important;
+  text-decoration: none;
+  border-radius: 50%;
+  font-weight: bold;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+.btn-text-link a:hover {
+  transform: scale(1.1);
+  background-color: var(--secondary-color);
+}
+
+/* =========================================
+   5. Specific Group Styles (1-8)
+   ========================================= */
+
+/* Group 2: Basic Images */
+.position {
+  display: flex;
+  border: 2px dashed blue;
+  margin: 20px 0;
+}
+.position.left {
+  justify-content: flex-start;
+}
+.position.center {
+  justify-content: center;
+}
+.position.right {
+  justify-content: flex-end;
+}
+
+/* Group 3: Resize */
+.img-fixed {
+  width: 260px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Group 4: Object Fit (แก้ไขเพิ่มกรอบตรงนี้) */
+.contain,
+.fill,
+.cover {
+  background-color: #eee;
+  border: 3px solid #555; /* เพิ่มเส้นขอบสีเทาเข้ม */
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.contain img,
+.fill img,
+.cover img {
+  width: 100%;
+  height: 200px;
+  display: block;
+}
+
+.contain img {
+  object-fit: contain;
+}
+.fill img {
+  object-fit: fill;
+}
+.cover img {
+  object-fit: cover;
+}
+
+/* Group 5: Image Link */
+.YT-img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+.YT-img:hover {
+  opacity: 0.8;
+}
+
+/* =========================================
+   6. Gallery & Delete Button Styles
+   ========================================= */
+
+.gallery {
+  display: grid;
+  /* Grid อัตโนมัติ: อย่างน้อย 120px ต่อรูป */
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* Wrapper สำหรับรูปใน Gallery (เพื่อให้ปุ่มลบเกาะติดได้) */
+.gallery-item {
+  position: relative; /* สำคัญ! */
+  width: 100%;
+  height: 120px; /* กำหนดความสูงรูป */
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.gallery-item:hover {
+  transform: scale(1.03);
+  z-index: 1;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ให้เต็มกล่อง Wrapper */
+  display: block;
+}
+
+/* ปุ่มลบ (x) */
+.delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: rgba(255, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  opacity: 0; /* ซ่อนไว้ก่อน */
+}
+
+/* แสดงปุ่มลบเมื่อเอาเมาส์ชี้ที่รูป */
+.gallery-item:hover .delete-btn {
+  opacity: 1;
+}
+
+.delete-btn:hover {
+  background-color: red;
+  transform: scale(1.1);
+}
+
+/* =========================================
+   7. Remaining Sections (Responsive, Figure, Local)
+   ========================================= */
+
+/* Group 6: Responsive */
+.card1 img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Group 7: Figure */
+figure {
+  background-color: #fafafa;
+  padding: 15px;
+  margin: 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+}
+
+figcaption {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #666;
+  font-style: italic;
+}
+
+/* Group 8: Local Files */
+.local-image pre {
+  background-color: #282c34;
+}
+
+/* Footer Link */
+.back-link {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 25px;
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.back-link:hover {
+  background-color: var(--primary-color);
+  color: white;
+}

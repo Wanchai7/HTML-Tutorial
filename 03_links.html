@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop: Various Links</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* =========================================
+           1. Global Styles (Theme หลัก)
+           ========================================= */
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #f39c12;
+            --bg-color: #f4f6f8;
+            --card-bg: #ffffff;
+            --text-color: #333;
+            --code-bg: #2d2d2d;
+            --code-text: #f8f8f2;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+            padding-bottom: 50px;
+        }
+
+        /* =========================================
+           2. Layout & Header
+           ========================================= */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* Grid Layout สำหรับหน้า Link (แบ่ง 2 คอลัมน์) */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        /* ทำให้แสดง 1 คอลัมน์บนมือถือ */
+        @media (max-width: 768px) {
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* =========================================
+           3. Card Styles
+           ========================================= */
+        .card {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eee;
+            /* transition: transform 0.2s; */
+        }
+
+        /* .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        } */
+
+        .card h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        /* Border Colors (แถบสีด้านบนการ์ดตามที่คุณเคยทำ) */
+        .border-red { border-top: 5px solid #ff6b6b; }
+        .border-green { border-top: 5px solid #2ecc71; }
+        .border-pink { border-top: 5px solid #ff9ff3; }
+        .border-salmon { border-top: 5px solid #ff7f50; }
+        .border-aqua { border-top: 5px solid #48dbfb; }
+        .border-brown { border-top: 5px solid #8d6e63; }
+
+        /* =========================================
+           4. Elements (Code, Buttons, Links)
+           ========================================= */
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        pre {
+            background-color: var(--code-bg);
+            color: var(--code-text);
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            border-left: 4px solid var(--secondary-color);
+            font-size: 0.9em;
+        }
+
+        code {
+            background-color: #eee;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #c7254e;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+
+        .note {
+            background-color: #fff8e1;
+            border-left: 4px solid #ffc107;
+            padding: 10px;
+            margin-top: 15px;
+            font-size: 0.95rem;
+            color: #555;
+            border-radius: 4px;
+        }
+        
+        .note::before {
+            content: "💡 ";
+        }
+
+        /* =========================================
+           5. Special Button Styles (สำหรับ Workshop ปุ่ม)
+           ========================================= */
+        /* กล่องย่อยสำหรับปุ่ม */
+        .btn-showcase {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        /* ปุ่มพื้นฐาน */
+        .btn-base {
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            border: none;
+            font-family: 'Prompt', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        /* สไตล์ต่างๆ */
+        .btn-blue {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        .btn-blue:hover { background-color: #357abd; }
+
+        .btn-gold-border {
+            background: white;
+            color: black;
+            border: 2px solid gold;
+        }
+
+        .btn-hover-anim:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* ปุ่ม Shimmer Effect */
+        .btn-shimmer {
+            background: black;
+            color: white;
+            border: 2px solid gold;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-shimmer::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -150%;
+            width: 50%;
+            height: 200%;
+            background: rgba(255,255,255,0.3);
+            transform: rotate(30deg);
+            transition: 0.6s;
+        }
+        .btn-shimmer:hover::after {
+            left: 150%;
+        }
+
+        /* รูปภาพ */
+        img.demo-img {
+            max-width: 100%;
+            border-radius: 8px;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        img.demo-img:hover {
+            transform: scale(1.02);
+        }
+
+        /* ปุ่ม Back ด้านล่าง */
+        .back-link {
+            display: block;
+            margin: 40px auto;
+            width: fit-content;
+            padding: 10px 25px;
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="header">
+            <h1>Workshop: Various Links</h1>
+            <p>เรียนรู้การสร้างลิงก์รูปแบบต่างๆ พร้อมตัวอย่างและแบบฝึกหัด</p>
+        </div>
+
+        <div class="grid-layout">
+
+            <div class="card border-red">
+                <h2>1. External Links</h2>
+                <p>การลิงก์ไปยังเว็บไซต์ภายนอก</p>
+                <div style="margin-top: 15px; padding: 15px; background: #f9f9f9; border-radius: 8px;">
+                    <p>
+                        🔗 <a href="https://www.wikipedia.org/" target="_blank">Visit Wikipedia</a>
+                        <br><small><code>target="_blank"</code> (เปิดแท็บใหม่)</small>
+                    </p>
+                    <hr style="margin: 10px 0; border: 0; border-top: 1px solid #ddd;">
+                    <p>
+                        🔗 <a href="https://www.google.com/?hl=th">Visit Google</a>
+                        <br><small><code>target="_self"</code> (เปิดหน้าเดิม)</small>
+                    </p>
+                </div>
+            </div>
+
+            <div class="card border-green">
+                <h2>2. Internal & Anchor Links</h2>
+                <p>การลิงก์ภายในหน้าเว็บเดียวกัน (Jump)</p>
+                <pre>
+&lt;a href="#jump"&gt;Jump to Section&lt;/a&gt;
+...
+&lt;h3 id="jump"&gt;Target&lt;/h3&gt;</pre>
+                <div style="text-align: center; margin: 20px 0;">
+                    <a href="#jump" class="btn-base btn-blue">Click to Jump ⬇️</a>
+                </div>
+                <div style="padding: 10px; background: #e8f5e9; border-radius: 6px;">
+                    <h3 id="jump" style="color: #2ecc71; margin:0;">🎯 This is the jump target.</h3>
+                </div>
+            </div>
+
+            <div class="card border-pink">
+                <h2>3. Email Link</h2>
+                <p>เปิดโปรแกรมส่งอีเมลอัตโนมัติ</p>
+                <pre>
+&lt;a href="mailto:email@ex.com"&gt;
+  Send Email
+&lt;/a&gt;</pre>
+                <div style="text-align: center;">
+                    <a href="https://mail.google.com/" style="font-size: 1.2rem;">📧 Send an Email</a>
+                </div>
+            </div>
+
+            <div class="card border-salmon">
+                <h2>4. Download Links</h2>
+                <p>บังคับให้ดาวน์โหลดไฟล์แทนการเปิดดู</p>
+                <pre>&lt;a href="file.pdf" download&gt;Download&lt;/a&gt;</pre>
+                <div style="text-align: center;">
+                    <a href="./file4Download/view.png" download class="btn-base" style="background: #ff7f50; color: white;">⬇️ Download File</a>
+                </div>
+                <div class="note">ต้องมีไฟล์จริงในโฟลเดอร์ถึงจะโหลดได้</div>
+            </div>
+
+            <div class="card border-aqua" style="grid-column: 1 / -1;"> <h2>5. Button Links & Styles</h2>
+                <p>การใช้ CSS ตกแต่ง <code>&lt;a&gt;</code> หรือ <code>&lt;button&gt;</code> ให้สวยงาม</p>
+                
+                <pre>
+&lt;button onclick="location.href='url'"&gt;Link&lt;/button&gt;</pre>
+
+                <div class="btn-showcase">
+                    <button class="btn-base btn-blue" onclick="location.href='https://www.w3schools.com/'">W3Schools</button>
+                    
+                    <button class="btn-base btn-gold-border" onclick="location.href ='https://www.facebook.com/view.wanchai'">Facebook</button>
+                    
+                    <button class="btn-base btn-hover-anim" onclick="location.href ='https://www.instagram.com/wxnchxi._?igsh=MWw2bnV4dWZtZnM2Nw=='">Instagram</button>
+                    
+                    <button class="btn-base btn-shimmer">SHIMMER ✨</button>
+                </div>
+            </div>
+
+            <div class="card border-brown" style="grid-column: 1 / -1;">
+                <h2>6. Image Link</h2>
+                <p>ใช้รูปภาพเป็นลิงก์ (คลิกที่รูป YouTube ด้านล่าง)</p>
+                <pre>
+&lt;a href="https://youtube.com"&gt;
+  &lt;img src="image.jpg"&gt;
+&lt;/a&gt;</pre>
+                
+                <div style="text-align: center;">
+                    <a href="https://www.youtube.com" target="_blank">
+                        <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Youtube Link" class="demo-img" style="max-width: 400px; width: 100%;">
+                    </a>
+                </div>
+
+                <div class="note" style="border-left-color: brown;">
+                    หากต้องการใช้รูปของตนเอง ให้เก็บไว้ในโฟลเดอร์ <code>images/photo.png</code>
+                </div>
+            </div>
+
+        </div> <a href="index.html" class="back-link">← Back to HTML Tutorial</a>
+
+    </div>
+</body>
+</html>
