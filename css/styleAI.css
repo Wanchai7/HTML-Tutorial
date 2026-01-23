@@ -362,3 +362,15 @@ figcaption {
   background-color: var(--primary-color);
   color: white;
 }
+
+#s8 {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
+                      url('/images/image.png');
+    
+    background-size: cover;      /* ขยายรูปให้เต็มพื้นที่ */
+    background-position: center; /* จัดรูปกึ่งกลาง */
+    background-repeat: no-repeat;
+    
+    /* เพิ่มขอบสีฟ้าเล็กน้อยเพื่อให้เด่นขึ้น */
+    border: 2px solid var(--primary-color);
+}

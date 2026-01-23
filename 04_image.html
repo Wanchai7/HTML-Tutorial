@@ -27,31 +27,26 @@
 
     <div class="container">
 
-      <div class="card" id="s1">
+        <div class="card" id="s1">
             <h2>1) Image Basic <span class="badge">src/alt</span></h2>
             <p>รูปภาพใน HTML ใช้แท็ก <code>img</code> โดยต้องมี <code>src</code> และควรมี <code>alt</code> เสมอ</p>
             <pre>
 &lt;img src="images/photo.jpg" alt="ภาพตัวอย่าง"&gt;</pre>
             
-            <div class="position left">
-                <img src="./images/image.png" alt="ตัวอย่าง 1"> <!-// alt คือถ้าภาพไม่ขึ้นจะแสดงข้อความใน alt ->
+            <div class="position1">
+                <img src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="ตัวอย่าง 1">
             </div>
-            <div class="position center">
-                <img src="./images/image.png" alt="ตัวอย่าง 2">
+            <div class="position2">
+                <img src="https://images.unsplash.com/photo-1493612276216-ee3925520721?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="ตัวอย่าง 2">
             </div>
-            <div class="position right">
-                <img src="./images/image.png" alt="ตัวอย่าง 3">
+            <div class="position3">
+                <img src="https://images.unsplash.com/photo-1517331156700-3c241d2b4d83?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="ตัวอย่าง 3">
             </div>
             <p class="note"><b>alt</b> สำคัญมาก: ช่วย SEO + ใช้แทนภาพเมื่อโหลดไม่ได้ + ช่วยผู้ใช้ Screen Reader</p>    
         </div>
 
         <div class="card" id="s2">
-            <h2>2) Resize & Aspect Ratio
-              <span class="badge">
-                object-fit
-              </span>
-            </h2>
-
+            <h2>2) Resize & Aspect Ratio</h2>
             <p>ถ้ากำหนดทั้งความกว้างและสูง ให้ใช้ <code>object-fit</code> เพื่อไม่ให้ภาพบิด</p>
             <pre>
 /* ครอปภาพให้พอดีกรอบ */
@@ -114,17 +109,14 @@
                     <img src="https://images.unsplash.com/photo-1550258987-190a2d41a8ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Fruit">
                     <button class="delete-btn" onclick="this.parentElement.remove()">×</button>
                 </div>
-
                 <div class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Bike">
                     <button class="delete-btn" onclick="this.parentElement.remove()">×</button>
                 </div>
-
                 <div class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Dog">
                     <button class="delete-btn" onclick="this.parentElement.remove()">×</button>
                 </div>
-
                 <div class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Cat">
                     <button class="delete-btn" onclick="this.parentElement.remove()">×</button>
@@ -164,7 +156,7 @@ my_project/
   └─ images/
       └─ photo1.jpg
 
-&lt;img src="images/photo1.jpg" alt="My Photo"&gt;</pre>
+&lt;img src="images/image.png" alt="My Photo"&gt;</pre>
         </div>
 
         <div style="text-align: center; margin-top: 40px;">
@@ -178,40 +170,22 @@ my_project/
 
         imageInput.addEventListener('change', function(event) {
             const file = event.target.files[0]; 
-            
             if (file) {
                 const reader = new FileReader();
-
                 reader.onload = function(e) {
-                    // 1. สร้างกล่องครอบ (Wrapper)
                     const wrapper = document.createElement('div');
                     wrapper.classList.add('gallery-item');
-
-                    // 2. สร้างรูปภาพ (Img)
                     const newImg = document.createElement('img');
                     newImg.src = e.target.result;
-                    
-                    // 3. สร้างปุ่มลบ (Button)
                     const deleteBtn = document.createElement('button');
                     deleteBtn.classList.add('delete-btn');
                     deleteBtn.innerHTML = '×';
-                    
-                    // สั่งให้กดปุ่มแล้วลบกล่องตัวเองทิ้ง
-                    deleteBtn.onclick = function() {
-                        wrapper.remove();
-                    };
-
-                    // 4. เอาทุกอย่างมายัดใส่กล่อง wrapper
+                    deleteBtn.onclick = function() { wrapper.remove(); };
                     wrapper.appendChild(newImg);
                     wrapper.appendChild(deleteBtn);
-
-                    // 5. เอากล่อง wrapper ไปต่อท้าย Gallery
                     gallery.appendChild(wrapper);
                 }
-
                 reader.readAsDataURL(file);
-                
-                // ล้างค่า input เพื่อให้เลือกรูปเดิมซ้ำได้ถ้าต้องการ
                 imageInput.value = ''; 
             }
         });
