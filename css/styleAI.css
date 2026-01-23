@@ -364,8 +364,8 @@ figcaption {
 }
 
 #s8 {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
-                      url('/images/image.png');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(217, 0, 255, 0.85)), 
+                      url('/images/chowder.png');
     
     background-size: cover;      /* ขยายรูปให้เต็มพื้นที่ */
     background-position: center; /* จัดรูปกึ่งกลาง */
