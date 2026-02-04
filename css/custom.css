@@ -1,0 +1,239 @@
+/* เคลียหน้าเว็บ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* กำหนดค่า default */
+  font-size: 16px;
+}
+
+body {
+  font-family: "Kanit", sans-serif;
+  /* background-color: aqua; */
+  color: black;
+}
+
+.wrapper {
+  width: 1000px;
+  /* support */
+  max-width: 100%;
+  /* 0 คือบนล่าง auto คือซ้ายขวา */
+  margin: 0 auto;
+
+  /* background-color: red; */
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  /*นำเส้นใต้ของ a ออก*/
+}
+
+a:hover {
+  text-decoration: underlines;
+}
+
+/* ======================================= Header ======================================== */
+.site-header {
+  background-color: white;
+  /* background: white;  จะโหลดหมดทุกอย่างที่อยู่ภายใต้ background*/
+  padding: 20px 0;
+  border-bottom: 2px solid blue;
+}
+
+.box-header-inner {
+  display: flex;
+  /* แยกให้อยู่คนละฝั่ง แนวนอน */
+  justify-content: space-between;
+  /* การจัดให้อยู่ตรงกลาง แนวตั้ง */
+  align-items: center;
+}
+
+.header-title {
+  font-weight: 700;
+  /* ขนาดตัวอักษร */
+  font-size: 1.5rem;
+  /*ค่า default 16*/
+  margin-bottom: 4px;
+}
+
+.header-subtitle {
+  font-weight: 400;
+  /* ขนาดตัวอักษร */
+  font-size: 0.8rem;
+  /* ค่า default 16*/
+  color: #777;
+}
+
+.social-icon a {
+  font-weight: 600;
+  /* ขนาดตัวอักษร */
+  font-size: 1rem;
+  /* rem 1 rem เท่าไหร่ก็ไได้ ค่า default 16 */
+  color: blue;
+  /* การทำวงกลม */
+  border: 1px solid black;
+  /* กรอบของ border */
+  border-radius: 50%;
+  /* กำหนดให้เป็นวงกลม */
+  width: 30px;
+  height: 30px;
+  /* การช่วยให้เป็นวงกลม */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  /* 1. กลุ่มขนาดและตำแหน่ง (Box Model)
+อะไรก็ตามที่เกี่ยวกับการขยายร่างหรือย้ายที่:
+Width / Height: การยืดความกว้าง-สูง
+Padding / Margin: การเพิ่มช่องว่างข้างในและข้างนอก
+Border-width: ความหนาของเส้นขอบ
+Top / Right / Bottom / Left: การย้ายตำแหน่ง (เมื่อใช้คู่กับ position)
+
+2. กลุ่มสีและหน้าตา (Visuals)
+กลุ่มนี้จะเห็นผลชัดที่สุดและใช้บ่อยมาก:
+Color: สีตัวอักษร
+Background-color: สีพื้นหลัง (เปลี่ยนจากแดงไปเขียวแบบค่อยๆ ไล่สี)
+Border-color: สีของเส้นขอบ
+Opacity: ความโปร่งใส (ทำให้จางหายไปหรือค่อยๆ ปรากฏขึ้น)
+Box-shadow: เงาของกล่อง (ทำให้เงาค่อยๆ ฟุ้งออกมา)
+
+3. กลุ่มการแปลงร่าง (Transforms)
+กลุ่มนี้ใช้ทำ Animation สวยๆ:
+
+Transform: เช่น การหมุน (rotate), การขยาย (scale), หรือการเลื่อน (translate) */
+  transition: all 0.3s ease;
+  /*0.3s:คือเวลา ease:ช้าไปเร็ว*/
+}
+
+/*selector poperty value*/
+.social-icon :hover {
+  border-color: blueviolet;
+  /**/
+  background-color: blueviolet;
+  /**/
+  color: white;
+  /*ตัวอักษรเมื่อเอาเมาส์ชี้*/
+
+  transform: translateY(-5px);
+  /* ให้เด้งขึ้นด้านบน โดยถ้าเป็น + จะเด้งลง ถ้าเป็น - จะเด้งขึ้น */
+}
+
+/* ======================================= Navbar ======================================== */
+.main-nav {
+  background-color: blue;
+}
+
+.nav-menu {
+  list-style: none;
+  /* นำจุดด้านหน้าอก */
+  display: flex;
+  /* ระยะห่างเมนูแต่ละเมนู */
+  /* gap: 15px;  */
+
+  flex-wrap: wrap;
+  /* เมื่อชนขอบให้ปัดขึ้นบรรทัดใหม่ */
+}
+
+.nav-menu li a {
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 400;
+  /*ทำให้ตัวอักษรหนาถ้าเยอะจะหนา ถ้าน้อยจะบาง*/
+
+  display: block;
+  /*เดิม displey เป็น inline*/
+  padding: 10px 15px;
+  /* กำหนดบนล่างโดย 10px คือด้านบน 0 คือด้านล่าง */
+}
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
+  background-color: white;
+
+  color: black;
+  /* สีตัวอักษรเมื่อเอาเมาส์ไป hover */
+  border-radius: 10%;
+  /* ทำให้เป็นวงกลม */
+}
+
+/* ======================================= Heri Section ======================================== */
+.hero-content {
+  background-color: lightblue;
+  padding: 30px 0;
+  /* 30 คือบนล่าง 0 คือ ซ้ายขวา*/
+  box-shadow: 0 4px 15px black;
+  margin-bottom: 30px;
+  /* ดันขึ้นด้านบน */
+}
+
+.hero-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 2px 2px 4px black;
+  /* การใส่เงา */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(250px, 1fr));
+  gap: 20px;
+} 
+
+.hero-item {
+  background-color: white;
+  padding: 25px;
+  border-radius: 18px;
+  transition: all 0.3s ease;
+}
+
+.hero-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  background: white;
+}
+
+.hero-item h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+.hero-item p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.hero-item .read-more {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #1e8bc3;
+
+  display: inline-block;
+}
+
+.hero-item .read-more:hover {
+  color: #764ba2;
+  text-decoration: none;
+}
+
+.hero-item .read-more::after {
+  content: "→";
+  margin-left: 5px;
+
+  transition: margin-left 0.3s ease;
+}
+
+.hero-item .read-more:hover::after {
+  margin-left: 100px;
+}
